@@ -1,0 +1,55 @@
+@import "./_reset";
+@import "./variables";
+@import "./_mediaQuery";
+
+/* Common Style */
+/* Atoms*/
+.link{
+  color: $mint;
+  text-decoration: none;
+  &:hover {
+    color: $lemon;
+  }
+}
+
+div,
+p,
+a,
+ul,
+li,
+form,
+h1,
+h2,
+h3{
+  text-align: left;
+  color: $black;
+}
+
+.container {
+  @include mq-up() {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 3fr;
+  }
+}
+.sideMenu {
+  height: 100vh;
+  @include mq-down() {
+    height: auto;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+  }
+}
+.main {
+  @include mq-down() {
+    margin-top: 100px;
+  }
+}
+.footer {
+  @include mq-up() {
+    display: none;
+  }
+  @include mq-down() {
+    margin: 40px 20px;
+  }
+}
