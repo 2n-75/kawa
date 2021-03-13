@@ -26,6 +26,8 @@ const StyledBanner = css`
   justify-content: center;
   z-index: 2;
   min-width: 300px;
+  font-family: 'Yusei Magic', sans-serif;
+  letter-spacing: 0.1em;
   text-align: center;
 `
 
