@@ -16,6 +16,8 @@ const Stoped = styled.img<{
   xOffset?: number
 }>`
   position: absolute;
+  -webkit-transform: translate(-50px, 0);
+  transform: translate(-50px, 0);
   ${({ xOffset }) =>
     xOffset && css`
     left: ${xOffset || 0}px;
@@ -25,7 +27,7 @@ const Stoped = styled.img<{
   bottom: 44vh;
   display: inline-block;
   @media (max-width: 768px) {
-    bottom: 40vh;
+    bottom: 41vh;
   }
 `
 

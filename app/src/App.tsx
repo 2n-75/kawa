@@ -6,24 +6,28 @@ import StoppedCouple from './components/StoppedCouple'
 import MovingCouple from './components/MovingCouple'
 import ResultBanner from './components/ResultBanner'
 import backgroundImg from './assets/bg.jpeg'
-import { average } from './util'
+import { average, getCorrectAverage } from './util'
 
 const App: FC = () => {
   const [coupleIndex, setCoupleIndex] = useState(0)
   const [coupleXOffsets, setCoupleXOffsets] = useState([0, 0, 0, 0, 0])
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(-1)
 
   /**
    * カップルをクリックした時
    */
   const handleClick = (event: React.MouseEvent) => {
     const element = event.currentTarget
-    coupleXOffsets[coupleIndex] = element.getBoundingClientRect().x
+    coupleXOffsets[coupleIndex] = element.getBoundingClientRect().x + 50
     setCoupleXOffsets(coupleXOffsets)
     setCoupleIndex(coupleIndex + 1)
     if ((coupleIndex + 1) > 4) {
       setScore(average(coupleXOffsets))
     }
+  }
+
+  const setIsSuccess = () => {
+    return score < 10
   }
 
   /**
@@ -38,9 +42,9 @@ const App: FC = () => {
   return (
     <AppWrapper>
       <Header index={coupleIndex} score={score} handleReset={handleReset} />
-      <Wrapper>
+      <Wrapper id="wrapper">
         <BackgroundImg src={backgroundImg} />
-        {coupleIndex > 4 && <ResultBanner error={true} />}
+        {score > 0 && <ResultBanner isSuccess={setIsSuccess()} />}
         <CoupleContainer>
           {coupleXOffsets.map((xOffset, index) => (
             <div>

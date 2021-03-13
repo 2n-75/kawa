@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components'
 import { color, font } from '../../config/const'
 import { IProps } from './types'
 
-const ResultBanner: FC<IProps> = ({ error }) => {
+const ResultBanner: FC<IProps> = ({ isSuccess }) => {
   return (
-    error ? (
-      <ErrorBanner><Text>NOT 均等</Text></ErrorBanner>
+    isSuccess? (
+      <SuccessBanner><Text>均等</Text></SuccessBanner>
     ) : (
-      <SuccessBanner><Text>均等</Text></SuccessBanner>)
+      <ErrorBanner><Text>NOT 均等</Text></ErrorBanner>)
   )
 }
 
@@ -21,11 +21,13 @@ const StyledBanner = css`
   padding: 10px 20px;
   border-radius: 10px;
   z-index: 2;
+  min-width: 300px;
+  text-align: center;
 `
 
 const SuccessBanner = styled.div`
   ${StyledBanner};
-  background: ${color.mint};
+  background: ${color.blue};
 `
 
 const ErrorBanner = styled.div`

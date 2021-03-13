@@ -1,3 +1,3 @@
 export interface IProps {
-  error?: boolean
+  isSuccess: boolean
 }

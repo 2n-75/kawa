@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { color } from '../../config/const'
 import { LabelCss } from '../Label'
@@ -7,11 +7,10 @@ import { IProps } from './types'
 const Header: FC<IProps> = ({ index, score, handleReset }) => {
   return (
     <StyledHeader>
-      <HeaderContent />
       <HeaderContent>
         {index < 5 ?
           <p>{index + 1}組目</p> :
-          <p>平均値：{score}</p>
+          <p>ちょうどいい間隔との誤差：{score}</p>
         }
       </HeaderContent>
       <HeaderContent>
@@ -26,7 +25,7 @@ const StyledHeader = styled.header`
   padding: 1vw 0;
   margin-bottom: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   @media (max-width: 768px) {
     height: 10vh;
   }
