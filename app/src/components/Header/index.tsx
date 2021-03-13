@@ -22,10 +22,13 @@ const Header: FC<IProps> = ({ index, score, handleReset }) => {
 }
 
 const StyledHeader = styled.header`
-  height: 10vh;
+  height: 5vh;
   margin: 1vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 768px) {
+    height: 10vh;
+  }
 `
 
 const HeaderContent = styled.div`
