@@ -1,10 +1,8 @@
 export const color = {
-  black: '#555454',
-  lemon: '#f6e355',
-  mint: '#a9d8cf',
-  salmon: '#ed747b',
-  sand: '#eaddc7',
-  green: '#00a381'
+  black: '#444',
+  mint: '#15E6B8',
+  green: '#00a381',
+  red: '#e6202a'
 }
 
 export const font = { size: '16px', bold: 600 }

@@ -1,11 +1,10 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import { color } from './config/const'
 import './assets/main.scss'
 import Header from './components/Header'
 import StoppedCouple from './components/StoppedCouple'
 import MovingCouple from './components/MovingCouple'
-import { Label } from './components/Label'
+import ResultBanner from './components/ResultBanner'
 import backgroundImg from './assets/bg.jpeg'
 import { average } from './util'
 
@@ -41,6 +40,7 @@ const App: FC = () => {
       <Header index={coupleIndex} score={score} handleReset={handleReset} />
       <Wrapper>
         <BackgroundImg src={backgroundImg} />
+        {coupleIndex > 4 && <ResultBanner error={true} />}
         <CoupleContainer>
           {coupleXOffsets.map((xOffset, index) => (
             <div>

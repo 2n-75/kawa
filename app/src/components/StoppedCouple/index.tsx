@@ -22,8 +22,11 @@ const Stoped = styled.img<{
   `}
   width: 100px;
   height: 100px;
-  bottom: 42vh;
+  bottom: 44vh;
   display: inline-block;
+  @media (max-width: 768px) {
+    bottom: 40vh;
+  }
 `
 
 export default StoppedCouple;
