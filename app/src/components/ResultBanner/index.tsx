@@ -18,8 +18,12 @@ const StyledBanner = css`
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 10px 20px;
   border-radius: 10px;
+  width: 60vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
   min-width: 300px;
   text-align: center;
@@ -36,7 +40,7 @@ const ErrorBanner = styled.div`
 `
 
 const Text = styled.span`
-  font-size: 3em;
+  font-size: 4em;
   font-weight: ${font.bold};
   color: #fff;
 `
