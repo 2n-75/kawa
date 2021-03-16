@@ -10,7 +10,7 @@ import { average, getCorrectAverage } from './util'
 
 const App: FC = () => {
   const [coupleIndex, setCoupleIndex] = useState(0)
-  const [coupleXOffsets, setCoupleXOffsets] = useState([0, 0, 0, 0, 0])
+  const [coupleXOffsets, setCoupleXOffsets] = useState([0, 0, 0, 0])
   const [score, setScore] = useState(-1)
 
   /**
@@ -21,7 +21,7 @@ const App: FC = () => {
     coupleXOffsets[coupleIndex] = element.getBoundingClientRect().x + 50
     setCoupleXOffsets(coupleXOffsets)
     setCoupleIndex(coupleIndex + 1)
-    if ((coupleIndex + 1) > 4) {
+    if ((coupleIndex + 1) > 3) {
       setScore(average(coupleXOffsets))
     }
   }
@@ -35,7 +35,7 @@ const App: FC = () => {
    */
   const handleReset = () => {
     setCoupleIndex(0)
-    setCoupleXOffsets([0, 0, 0, 0, 0])
+    setCoupleXOffsets([0, 0, 0, 0])
     setScore(0)
   }
 
@@ -74,9 +74,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 95vh;
   position: fixed;
-  @media (max-width: 768px) {
-    height: 90vh;
-  }
 `
 
 const CoupleContainer = styled.div`

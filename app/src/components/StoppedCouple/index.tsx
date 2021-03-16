@@ -27,7 +27,9 @@ const Stoped = styled.img<{
   bottom: 44vh;
   display: inline-block;
   @media (max-width: 768px) {
-    bottom: 41vh;
+    width: 75px;
+    height: 75px;
+    bottom: 45vh;
   }
 `
 

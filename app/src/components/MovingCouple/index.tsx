@@ -30,7 +30,10 @@ const Moving = styled.img`
   z-index: 1;
   cursor: pointer;
   @media (max-width: 768px) {
-    bottom: 42vh;
+    width: 75px;
+    height: 75px;
+    bottom: 46vh;
+    animation: ${move} 10s linear infinite;
   }
 `
 

@@ -22,13 +22,10 @@ const Header: FC<IProps> = ({ index, score, handleReset }) => {
 
 const StyledHeader = styled.header`
   height: 5vh;
-  padding: 1vw 0;
-  margin-bottom: 5px;
+  padding: 2vw 0;
+  margin-bottom: 1vh;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  @media (max-width: 768px) {
-    height: 10vh;
-  }
   box-shadow: 0 2px 6px rgba(192,164,140,0.3);
 `
 
@@ -36,6 +33,7 @@ const HeaderContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1vw;
 `
 
 const Button = styled.button`

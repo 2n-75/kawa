@@ -29,6 +29,10 @@ const StyledBanner = css`
   font-family: 'Yusei Magic', sans-serif;
   letter-spacing: 0.1em;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 90vw;
+    height: 25vh;
+  }
 `
 
 const SuccessBanner = styled.div`
