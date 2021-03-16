@@ -8,7 +8,7 @@ const Header: FC<IProps> = ({ index, score, handleReset }) => {
   return (
     <StyledHeader>
       <HeaderContent>
-        {index < 5 ?
+        {index < 4 ?
           <p>{index + 1}組目</p> :
           <p>ちょうどいい間隔との誤差：{score}</p>
         }
